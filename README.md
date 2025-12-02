@@ -1,19 +1,98 @@
-# LogColor
+# ChromaLogger
 
-Une bibliothèque JavaScript simple pour ajouter des couleurs et des styles aux messages de la console en Node.js.
+[![npm version](https://img.shields.io/npm/v/chromalogger.svg?style=flat)](https://www.npmjs.com/package/chromalogger)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub stars](https://img.shields.io/github/stars/OrssiMp/chromalogger.svg?style=social)](https://github.com/OrssiMp/chromalogger/stargazers)
 
-## Installation
+ChromaLogger est une bibliothèque Node.js puissante et flexible pour la journalisation de console avec un support avancé des couleurs et des styles. Parfaite pour le développement et le débogage d'applications Node.js.
+
+## ✨ Fonctionnalités
+
+- 🎨 Messages de console colorés et stylisés
+- 📊 Plusieurs niveaux de logs (log, debug, info, warn, error)
+- 🛠️ Interface de ligne de commande (CLI) intégrée
+- 🔧 Personnalisation facile des styles et formats
+- 📦 Compatible ES Modules et CommonJS
+- 🚀 Légère et sans dépendances inutiles
+
+## 📦 Installation
 
 ```bash
-npm install logcolor-js
+# Avec npm
+npm install chromalogger
+
+# Ou avec Yarn
+yarn add chromalogger
 ```
 
-## Utilisation
+## 🚀 Utilisation de base
 
 ### Avec ES Modules (recommandé)
 
 ```javascript
-import logger from 'logcolor-js';
+import { log, info, warn, error, createLogger } from 'chromalogger';
+
+// Utilisation des loggers prédéfinis
+log('Message standard');
+info('Information importante');
+warn('Attention !');
+error('Erreur critique !');
+
+// Création d'un logger personnalisé
+const customLogger = createLogger('magenta', 'underline');
+customLogger('Message personnalisé');
+```
+
+### Avec CommonJS
+
+```javascript
+const { log, info, warn, error } = require('chromalogger');
+
+// Utilisation des loggers
+log('Message standard');
+info('Information');
+warn('Avertissement');
+error('Erreur');
+```
+
+## 🛠️ Interface en Ligne de Commande (CLI)
+
+ChromaLogger inclut un utilitaire en ligne de commande `clog` :
+
+```bash
+# Afficher l'aide
+npx clog --help
+
+# Afficher un message simple
+npx clog "Mon message"
+
+# Utiliser des couleurs et styles
+npx clog --color red --style bright "Message d'erreur important"
+```
+
+## 📚 Documentation Complète
+
+Pour plus d'informations sur les fonctionnalités avancées, consultez la [documentation complète](https://github.com/OrssiMp/chromalogger#readme).
+
+## 🤝 Contribuer
+
+Les contributions sont les bienvenues ! Voici comment contribuer :
+
+1. Forkez le projet
+2. Créez une branche pour votre fonctionnalité (`git checkout -b feature/AmazingFeature`)
+3. Committez vos changements (`git commit -m 'Add some AmazingFeature'`)
+4. Poussez vers la branche (`git push origin feature/AmazingFeature`)
+5. Ouvrez une Pull Request
+
+## 📄 Licence
+
+Distribué sous licence MIT. Voir le fichier `LICENSE` pour plus d'informations.
+
+## 📞 Contact
+
+Orssi Mp - [@OrssiMp](https://github.com/OrssiMp) - orssimpiere5@gmail.com
+
+Lien du projet : [https://github.com/OrssiMp/chromalogger](https://github.com/OrssiMp/chromalogger)
 
 // Couleurs de base
 logger.red('Ceci est en rouge');
