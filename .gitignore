@@ -5,14 +5,38 @@ node_modules/
 logs
 *.log
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Coverage directory used by tools like istanbul
+coverage/
+.nyc_output/
 
 # Environment variables
 .env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Build output
+dist/
+build/
 
 # IDE specific files
 .vscode/
 .idea/
+*.sublime-project
+*.sublime-workspace
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
+#test
+examples
+test
 # OS generated files
 .DS_Store
 .DS_Store?
@@ -21,3 +45,17 @@ npm-debug.log*
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Misc
+.cache/
+.temp/
+.tmp/
+
+# Lock files
+yarn.lock
+package-lock.json
+
+CHANGELOG.md
+
+ideas/
+docs/

@@ -1,70 +1,142 @@
 # LogColor
 
-Une bibliothèque simple pour ajouter des couleurs aux logs de la console Node.js.
+Une bibliothèque JavaScript simple pour ajouter des couleurs et des styles aux messages de la console en Node.js.
 
 ## Installation
 
 ```bash
-npm install @votre-nom/logcolor
+npm install logcolor-js
 ```
 
-## Utilisation basique
+## Utilisation
+
+### Avec ES Modules (recommandé)
 
 ```javascript
-const log = require('./LogColor');
+import logger from 'logcolor-js';
 
-// Exemples d'utilisation
-log.red('Ceci est un message en rouge');
-log.green('Opération réussie !');
-log.yellow('Avertissement : action requise');
-log.blue('Information importante');
-log.bold('Message en gras');
-log.underline('Texte souligné');
-
-// Alias
-log.danger('Message d\'erreur'); // Équivalent à log.red()
-log.success('Succès !');         // Équivalent à log.green()
+// Couleurs de base
+logger.red('Ceci est en rouge');
+logger.green('Ceci est en vert');
+logger.blue('Ceci est en bleu');
+logger.yellow('Ceci est en jaune');
 ```
 
-## Méthodes disponibles
-
-- Couleurs :
-  - `red(message)` / `danger(message)` - Texte en rouge
-  - `green(message)` / `success(message)` - Texte en vert
-  - `yellow(message)` - Texte en jaune
-  - `blue(message)` - Texte en bleu
-  - `magenta(message)` - Texte en magenta
-  - `cyan(message)` - Texte en cyan
-  - `white(message)` - Texte en blanc
-
-- Styles :
-  - `bold(message)` - Texte en gras
-  - `underline(message)` - Texte souligné
-
-## Exemple complet
+### Avec CommonJS
 
 ```javascript
-const log = require('./LogColor');
+const logger = require('logcolor-js');
 
-function validateInput(input) {
-  if (!input) {
-    log.danger('Erreur : Aucune entrée fournie');
-    return false;
-  }
-  
-  if (input.length < 5) {
-    log.yellow('Avertissement : L\'entrée est très courte');
-    return false;
-  }
-  
-  log.success('Validation réussie !');
-  return true;
-}
+// Arrière-plans colorés
+logger.bgRed(' Fond rouge ');
+logger.bgGreen(' Fond vert ');
+logger.bgBlue(' Fond bleu ');
+```
 
-// Test
-validateInput('');
-validateInput('abc');
-validateInput('entrée valide');
+## Fonctionnalités
+
+### Couleurs de texte
+
+- `red(text)` - Texte rouge
+- `green(text)` - Texte vert
+- `blue(text)` - Texte bleu
+- `yellow(text)` - Texte jaune
+- `white(text)` - Texte blanc
+- `black(text)` - Texte noir
+- `magenta(text)` - Texte magenta
+- `cyan(text)` - Texte cyan
+
+### Arrière-plans
+
+- `bgRed(text)` - Fond rouge
+- `bgGreen(text)` - Fond vert
+- `bgBlue(text)` - Fond bleu
+- `bgYellow(text)` - Fond jaune
+- `bgWhite(text)` - Fond blanc
+- `bgBlack(text)` - Fond noir
+- `bgMagenta(text)` - Fond magenta
+- `bgCyan(text)` - Fond cyan
+
+### Styles de texte
+
+- `bold(text)` - Texte en gras
+- `underline(text)` - Texte souligné
+- `italic(text)` - Texte en italique
+- `inverse(text)` - Inverse les couleurs
+- `strikethrough(text)` - Texte barré
+
+### Niveaux de log
+
+- `setLogLevel(level)` - Définit le niveau de log ('DEBUG', 'INFO', 'WARN', 'ERROR')
+- `debug(...args)` - Message de débogage
+- `info(...args)` - Information
+- `warn(...args)` - Avertissement
+- `error(...args)` - Erreur
+- `success(...args)` - Succès (alias pour info avec icône de succès)
+- `warning(...args)` - Avertissement (alias pour warn avec icône d'avertissement)
+
+## Exemples avancés
+
+### Combinaison de styles
+
+```javascript
+// Combinaison de styles
+logger.bold(logger.red('Texte en gras et rouge'));
+logger.bgBlue(logger.white('Texte blanc sur fond bleu'));
+```
+
+### Niveaux de log
+
+```javascript
+// Définir le niveau de log (par défaut: 'INFO')
+logger.setLogLevel('DEBUG');
+
+// Messages de log
+logger.debug('Message de débogage');
+logger.info('Information');
+logger.warn('Avertissement');
+logger.error('Erreur');
+```
+
+### Avec des objets et tableaux
+
+```javascript
+// Objets
+const user = {
+  name: 'John',
+  age: 30,
+  roles: ['admin', 'user'],
+};
+logger.info('Utilisateur:', user);
+
+// Tableaux
+const numbers = [1, 2, 3, 4, 5];
+logger.info('Nombres:', numbers);
+
+// Références circulaires
+const obj1 = { name: 'Objet 1' };
+const obj2 = { name: 'Objet 2', ref: obj1 };
+obj1.ref = obj2;
+logger.info('Objet avec référence circulaire:', obj1);
+```
+
+## Personnalisation
+
+### Styles personnalisés
+
+```javascript
+// Accès direct aux codes ANSI
+console.log(
+  `${logger.styles.bold}${logger.styles.red}Texte en gras et rouge${logger.styles.reset}`
+);
+```
+
+### Templates
+
+```javascript
+const name = 'Alice';
+const age = 30;
+logger.info('Nom: {0}, Âge: {1}', name, age);
 ```
 
 ## Contribution
