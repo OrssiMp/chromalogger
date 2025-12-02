@@ -25,6 +25,32 @@ npm install chromalogger
 yarn add chromalogger
 ```
 
+## 🎨 Utilisation de la fonction `chroma`
+
+La fonction `chroma` vous permet de créer des messages colorés avec une grande flexibilité :
+
+```javascript
+import { chroma } from 'chromalogger';
+
+// Utilisation de base
+chroma('Texte en rouge', 'red');
+chroma('Texte en vert sur fond jaune', 'green', 'bgYellow');
+
+// Chaînage des styles
+chroma('Texte en gras et souligné', 'bold', 'underline');
+
+// Avec des templates strings
+const user = 'Alice';
+console.log(chroma(`Bonjour ${user}, ceci est un `, 'yellow') + 
+            chroma('message important', 'red', 'bright') + 
+            chroma(' !', 'yellow'));
+
+// Styles disponibles :
+// Couleurs : black, red, green, yellow, blue, magenta, cyan, white
+// Arrière-plans : bgBlack, bgRed, bgGreen, bgYellow, bgBlue, bgMagenta, bgCyan, bgWhite
+// Styles : bright, dim, italic, underline, blink, reverse, hidden, strikethrough
+```
+
 ## 🚀 Utilisation de base
 
 ### Avec ES Modules (recommandé)
@@ -61,13 +87,15 @@ ChromaLogger inclut un utilitaire en ligne de commande `clog` :
 
 ```bash
 # Afficher l'aide
-npx clog --help
+npx clog --help ou clog --help
 
 # Afficher un message simple
-npx clog "Mon message"
+npx clog "Mon message" ou clog "Mon message"
 
 # Utiliser des couleurs et styles
-npx clog --color red --style bright "Message d'erreur important"
+npx clog --color red --style bright "Message d'erreur important" / clog --color red --style bright "Message d'erreur important"
+
+clog --color red --style bright "Message d'erreur important" / clog --color red --style bright "Message d'erreur important"
 ```
 
 ## 📚 Documentation Complète
@@ -99,7 +127,8 @@ logger.red('Ceci est en rouge');
 logger.green('Ceci est en vert');
 logger.blue('Ceci est en bleu');
 logger.yellow('Ceci est en jaune');
-```
+
+````
 
 ### Avec CommonJS
 
@@ -110,7 +139,7 @@ const logger = require('logcolor-js');
 logger.bgRed(' Fond rouge ');
 logger.bgGreen(' Fond vert ');
 logger.bgBlue(' Fond bleu ');
-```
+````
 
 ## Fonctionnalités
 
