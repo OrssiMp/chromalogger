@@ -1,0 +1,35 @@
+{
+  "name": "@votre-nom/logcolor",
+  "version": "1.0.0",
+  "description": "Une bibliothèque simple pour ajouter des couleurs aux logs de la console Node.js",
+  "main": "LogColor.js",
+  "type": "module",
+  "scripts": {
+    "test": "node test.js",
+    "lint": "eslint .",
+    "prepublishOnly": "npm test && npm run lint"
+  },
+  "keywords": [
+    "log",
+    "color",
+    "console",
+    "logger",
+    "nodejs"
+  ],
+  "author": "Votre Nom <votre@email.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/votre-utilisateur/logcolor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/votre-utilisateur/logcolor/issues"
+  },
+  "homepage": "https://github.com/votre-utilisateur/logcolor#readme",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.0"
+  }
+}
