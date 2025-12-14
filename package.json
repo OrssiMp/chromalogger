@@ -1,6 +1,6 @@
 {
   "name": "chromalogger",
-  "version": "1.1.1",
+  "version": "2.0.0",
   "description": "A colorful and flexible console logger for Node.js with CLI support",
   "main": "chromalog.js",
   "type": "module",
