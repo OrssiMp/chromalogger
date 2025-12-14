@@ -1,13 +1,9 @@
 #!/usr/bin/env node
 
-console.log('Démarrage du CLI...'); // Debug
-
-import { createLogger } from './chromalog.js';
+import { createLogger } from '../chromalog.js';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
 import path from 'path';
-
-console.log('Chargement des modules terminé'); // Debug
 
 function showHelp() {
   const helpText = `
@@ -27,7 +23,8 @@ function showHelp() {
 }
 
 function main() {
-  console.log('Début de la fonction main'); // Debug
+  const logger = createLogger('white', 'bright');
+  logger('Début de la fonction main'); // Debug
   const args = process.argv.slice(2);
   console.log('Arguments:', args); // Debug
 
