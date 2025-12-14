@@ -1,12 +1,16 @@
 {
   "name": "chromalogger",
-  "version": "2.0.0",
+  "version": "1.2.0",
   "description": "A colorful and flexible console logger for Node.js with CLI support",
-  "main": "chromalog.js",
+  "main": "index.js",
   "type": "module",
   "bin": {
     "clog": "./cli.js"
   },
+  "files": [
+    "index.js",
+    "chromalog.js"
+  ],
   "scripts": {
     "test": "node test.js",
     "test:watch": "nodemon --watch chromalog.js --watch test.js --exec \"npm test\"",

@@ -1,0 +1,27 @@
+# Fichiers à ignorer lors de la publication sur npm
+
+# Dossiers
+.idea/
+.vscode/
+node_modules/
+coverage/
+test/
+examples/
+
+# Fichiers
+*.log
+*.mdx
+*.yml
+*.yaml
+.editorconfig
+.eslintrc*
+.gitattributes
+.gitignore
+.npmignore
+.prettierrc
+*.test.js
+*.spec.js
+
+# Fichiers système
+.DS_Store
+Thumbs.db
