@@ -55,7 +55,7 @@ const user = {
   }
 };
 
-logger.info('Détails de l\'utilisateur:', JSON.stringify(user, null, 0));
+logger.info('Détails de l\'utilisateur:', JSON.stringify(user, null, 2));
 logger.bgBlue().white('Utilisateur chargé:', user.name);
 
 // Activation des timestamps
