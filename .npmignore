@@ -2,6 +2,7 @@
 
 # Dossiers
 .idea/
+.docs/
 .vscode/
 node_modules/
 coverage/
