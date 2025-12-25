@@ -28,6 +28,7 @@ Thumbs.db
 test.js
 chromatest.js
 clitest.js
+browser-demo.html
 
 # Build artifacts
 dist/
@@ -44,3 +45,4 @@ build/
 # Package lock
 package-lock.json
 yarn.lock
+

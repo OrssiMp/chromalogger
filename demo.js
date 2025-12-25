@@ -1,5 +1,5 @@
 // Importation du logger et des styles
-import logger from './chromalog.js';
+import logger from './index.js';
 
 import { textStyles, bgColors, textColors } from './styles/index.js';
 // Test des différentes méthodes de log

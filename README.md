@@ -60,6 +60,40 @@ ChromaLogger includes several built-in styles:
 - Advanced formatting options
 - Optional timestamps
 - Reusable style themes
+- Browser support with styled console groups
+
+## Browser Support
+
+ChromaLogger works in modern browsers with full styling support:
+
+```javascript
+// In your browser code
+import { browser } from 'chromalogger';
+
+// All logging methods work in the browser
+browser.info('Browser info message');
+browser.success('Operation completed in browser!');
+browser.warn('Browser warning');
+browser.error('Browser error occurred');
+
+// With timestamps
+browser.setTimestamp(true);
+browser.info('This message has a timestamp');
+```
+
+### Browser-Specific Features
+
+- **Collapsible Groups**: Info and success logs are displayed in collapsible groups
+- **Native Console Methods**: Uses `console.warn` and `console.error` for warnings and errors
+- **Responsive Design**: Logs adapt to the browser's console width
+
+### Supported Browsers
+
+- Chrome 30+
+- Firefox 25+
+- Edge 12+
+- Safari 7+
+- Opera 15+
 
 ## License
 

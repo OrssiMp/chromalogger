@@ -23,6 +23,8 @@ docs/
 .prettierrc
 *.test.js
 *.spec.js
+demo.js
+browser-demo.html
 
 # Fichiers système
 .DS_Store
