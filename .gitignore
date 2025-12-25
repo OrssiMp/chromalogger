@@ -28,7 +28,7 @@ Thumbs.db
 test.js
 chromatest.js
 clitest.js
-browser-demo.html
+*.html
 
 # Build artifacts
 dist/

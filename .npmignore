@@ -24,7 +24,7 @@ docs/
 *.test.js
 *.spec.js
 demo.js
-browser-demo.html
+*.html
 
 # Fichiers système
 .DS_Store
