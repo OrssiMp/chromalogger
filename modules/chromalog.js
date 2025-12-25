@@ -5,7 +5,7 @@ import {
   textColors, 
   bgColors, 
   textStyles 
-} from '../styles/index.js';
+} from './styles/index.js';
 
 // Combine all styles for backward compatibility
 const colors = {

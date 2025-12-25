@@ -1,7 +1,7 @@
 // Importation du logger et des styles
 import logger from './index.js';
 
-import { textStyles, bgColors, textColors } from './styles/index.js';
+import { textStyles, bgColors, textColors } from './modules/styles/index.js';
 // Test des différentes méthodes de log
 console.log('\n=== Test des logs basiques ===');
 logger.log('Ceci est un message de log standard');
