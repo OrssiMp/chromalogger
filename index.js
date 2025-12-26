@@ -5,6 +5,5 @@ import { logger } from './modules/chromalog.js';
 import { browser } from './modules/chromalog.browser.js';
 
 export { logger, browser };
-
 export default logger;
 
